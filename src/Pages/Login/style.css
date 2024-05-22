@@ -1,0 +1,61 @@
+.login-container {
+    background-image: url('./Images/barco.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 150px;
+    left: 35%;
+    background: #FFF7;
+    border-radius: 30px;
+    gap: 60px;
+}
+
+.input-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #000;
+    font-family: monospace;
+    font-weight: 600;
+}
+
+.button{
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+    color: #000;
+    font-weight: 600;
+    font-family: sans-serif;
+    background-color: #a7dbede8;
+    box-shadow: 6px 3px 6px #40859fc4;
+}
+
+
+.button:hover{
+    cursor: pointer;
+    background-color: #bff5d6b3;
+    box-shadow: 6px 3px 6px #7ac9add9;
+}
+
+
+.button.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.button.enabled {
+    pointer-events: all;
+    opacity: 1;
+}
