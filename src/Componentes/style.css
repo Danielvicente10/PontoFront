@@ -7,7 +7,31 @@
     border-radius: 14px;
     padding: 6px;
     text-align: start;
-    font-size: 18px;
+    font-size: 16px;
     padding-left: 12px;
 }
 
+.input-wrapper {
+    margin-bottom: 15px;
+}
+
+.password-icon{
+    position: absolute;
+    left: 90%;
+    top: 20%;
+}
+ 
+.password-container{
+    display: flex;
+    position: relative;
+}
+
+.password-icon:hover{
+    cursor:pointer;
+}
+
+/* .icon-email{
+    position: absolute;
+    left: 69%;
+    top: 30%;
+} */
