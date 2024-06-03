@@ -1,0 +1,27 @@
+.button {
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+    color: #000;
+    font-weight: 600;
+    font-family: sans-serif;
+    background-color: #a7dbede8;
+    box-shadow: 6px 3px 6px #40859fc4;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #bff5d6b3;
+    box-shadow: 6px 3px 6px #7ac9add9;
+}
+
+.button.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.button.enabled {
+    pointer-events: all;
+    opacity: 1;
+}
