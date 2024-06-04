@@ -10,7 +10,7 @@ interface ButtonEnviarProps {
 const ButtonEnviar: React.FC<ButtonEnviarProps> = ({ onClick, disabled, className }) => {
     return (
         <button className={className} onClick={onClick} disabled={disabled}>
-            Enviar
+            Salvar
         </button>
     );
 }

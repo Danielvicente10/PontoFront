@@ -3,9 +3,11 @@ import './style.css';
 import { Input, InputPassword } from '../../Componentes/Inputs/Input';
 import { ButtonEnviar } from '../../Componentes/Buttons/buttons';
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
     const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
     useEffect(() => {
@@ -38,12 +40,12 @@ const Login: React.FC = () => {
     return (
         <div className='login-container'>
             <div className='input-container'>
-            <h1>Login</h1>
-                <Input title="E-mail" value={name} onChange={(e) => setName(e.target.value)} />
+                <span style={{    position: "absolute", top: "20px", left: "20px"}}>voltar</span>
+                <h1>Cadastro</h1>
+                <Input title="Nome" value={name} onChange={(e) => setName(e.target.value)} />
+                <Input title="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <InputPassword title="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <div style={{marginTop: "-20px"}}>
-                    <span style={{fontSize: "12px"}}>Não tem uma conta <a style={{color: "#004cff"}}>Cadastre-se</a></span>
-                </div>
+                <InputPassword title="Confirme a senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 <ButtonEnviar
                     className={`button ${isButtonEnabled ? 'enabled' : 'disabled'}`}
                     disabled={!isButtonEnabled}
@@ -54,4 +56,4 @@ const Login: React.FC = () => {
     );
 };
 
-export default Login;
+export default Register;
