@@ -5,12 +5,13 @@ interface ButtonEnviarProps {
     onClick: () => void;
     disabled: boolean;
     className: string;
+    title: string;
 }
 
-const ButtonEnviar: React.FC<ButtonEnviarProps> = ({ onClick, disabled, className }) => {
+const ButtonEnviar: React.FC<ButtonEnviarProps> = ({ onClick, disabled, className, title }) => {
     return (
         <button className={className} onClick={onClick} disabled={disabled}>
-            Salvar
+            {title}
         </button>
     );
 }

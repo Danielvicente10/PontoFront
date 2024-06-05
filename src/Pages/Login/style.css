@@ -21,3 +21,12 @@
     border-radius: 30px;
     gap: 20px;
 }
+
+.register{
+    color: #004cff;
+}
+
+.register:hover{
+    cursor: pointer;
+    color:red;
+}

@@ -1,0 +1,22 @@
+.back{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    align-items: center;
+    display: flex;
+}
+.back:hover{
+    cursor: pointer;
+    color:red;
+}
+
+.arrow-left{
+    margin-right: 7px;
+}
+
+.user-check{
+    font-size: 100px;
+    color: #277927;
+    background-color: black;
+    border-radius: 7px;
+}

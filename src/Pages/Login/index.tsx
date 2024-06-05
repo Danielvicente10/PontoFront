@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import { Input, InputPassword } from '../../Componentes/Inputs/Input';
 import { ButtonEnviar } from '../../Componentes/Buttons/buttons';
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
     const [name, setName] = useState('');
@@ -35,6 +36,12 @@ const Login: React.FC = () => {
         }
     };
 
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+      navigate('/Register');
+    };
+
     return (
         <div className='login-container'>
             <div className='input-container'>
@@ -42,12 +49,13 @@ const Login: React.FC = () => {
                 <Input title="E-mail" value={name} onChange={(e) => setName(e.target.value)} />
                 <InputPassword title="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <div style={{marginTop: "-20px"}}>
-                    <span style={{fontSize: "12px"}}>Não tem uma conta <a style={{color: "#004cff"}}>Cadastre-se</a></span>
+                    <span style={{fontSize: "12px"}}>Não tem uma conta <a className='register' onClick={handleClick}>Cadastre-se</a></span>
                 </div>
                 <ButtonEnviar
                     className={`button ${isButtonEnabled ? 'enabled' : 'disabled'}`}
                     disabled={!isButtonEnabled}
                     onClick={handleLogin}
+                    title='Entrar'
                 />
             </div>
         </div>
