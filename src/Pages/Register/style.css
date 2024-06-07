@@ -4,7 +4,10 @@
     left: 20px;
     align-items: center;
     display: flex;
+    width: 0;
+    height: 5%;
 }
+
 .back:hover{
     cursor: pointer;
     color:red;
