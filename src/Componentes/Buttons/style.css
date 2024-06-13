@@ -1,3 +1,4 @@
+/* Botão de Enviar */
 .button {
     border: none;
     border-radius: 10px;
@@ -25,4 +26,36 @@
 .button.enabled {
     pointer-events: all;
     opacity: 1;
+}
+
+
+/* Botão de marca ponto */
+.container-buttom{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+
+}
+
+.buttom-ponto{
+    border: none;
+    border-radius: 50%;
+    width: 5%;
+    height: 10%;
+    background-color: #d4d78e;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttom-ponto:hover{
+    cursor: pointer;
+    background-color:  #dbdf90;;
 }
