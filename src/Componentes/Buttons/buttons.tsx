@@ -8,10 +8,6 @@ interface ButtonEnviarProps {
     title: string;
 }
 
-const handlerClickPonto = () => (
-    console.log(new Date)
-);
-
 const ButtonEnviar: React.FC<ButtonEnviarProps> = ({ onClick, disabled, className, title }) => {
     return (
         <button className={className} onClick={onClick} disabled={disabled}>
@@ -20,14 +16,16 @@ const ButtonEnviar: React.FC<ButtonEnviarProps> = ({ onClick, disabled, classNam
     );
 }
 
+interface ButtonMarcarPontoProps {
+    onClick: () => void;
+}
 
-const ButtonMarcarPonto: React.FC = () => {
+const ButtonMarcarPonto: React.FC<ButtonMarcarPontoProps> = ({ onClick }) => {
     return(
         <div className='container-buttom'>
-            <button className='buttom-ponto' onClick={handlerClickPonto}>Click Aqui!</button>
+            <button className='buttom-ponto' onClick={onClick}>Click Aqui!</button>
         </div>
-    )
-    
+    );
 }
 
 export { ButtonEnviar, ButtonMarcarPonto };
