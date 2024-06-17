@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     return (
         <div style={{display: "flex"}}>
             <NavBarVertical></NavBarVertical>
-            <MarkPointer></MarkPointer>
+            {/* <MarkPointer></MarkPointer> */}
             
         </div>
     );

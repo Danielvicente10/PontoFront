@@ -19,10 +19,22 @@ const MarkPointer: React.FC = () => {
             minute: '2-digit',
             second: '2-digit'
         });
-        setEntrada(formattedDate);
-        setIntervalo(formattedDate);
-        setFimIntervalo(formattedDate);
-        setFimExpediente(formattedDate);
+
+        if (entrada == ""){
+            return setEntrada(formattedDate);
+        }
+
+        if (intervalo == ""){
+            return setIntervalo(formattedDate);
+        }
+
+        if (fimIntervalo == ""){
+            return setFimIntervalo(formattedDate);
+        }
+
+        if (fimExpediente == ""){
+            return setFimExpediente(formattedDate);
+        }
     };
 
 

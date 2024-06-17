@@ -3,23 +3,27 @@ import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import MarkPointer from '../MarkPointer';
 
 const NavBarVertical: React.FC = () => {
-    const [isShow, setIsShow] = useState(false);
+    const [isShow, setIsShow] = useState(true);
     const handleToggle = () => setIsShow(!isShow);
+    const [modal, setModal] = useState(false)
+    const handleModal = () => setModal(!modal)
     const navigate = useNavigate();
 
     const handleClick = (route: string) => () => {
         if (route === 'home') {
             navigate('/Home');
         } else if (route === 'register') {
-            navigate('/register');
+            handleModal();
         } else if (route === 'scorePoint') {
             navigate('/scorePoint');
         }
     };
 
     return (
+        <>
         <div className={`container ${!isShow ? 'collapsed' : ''}`}>
             <nav>
                 <ul>
@@ -32,6 +36,11 @@ const NavBarVertical: React.FC = () => {
                 </ul>
             </nav>
         </div>
+        <div style={{width: "100%"}}>
+           {modal ? <MarkPointer></MarkPointer> : ""} 
+        </div>
+        
+        </>
     );
 }
 
