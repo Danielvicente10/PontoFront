@@ -27,7 +27,6 @@ const InputPassword: React.FC<InputProps> = ({ title, value, onChange }) => {
     const handlerPassword = () => setIsShow(!isShow);
 
     return (
-
         <div>
             <label className='input-title'>{title}</label>
             <div className='password-container'>
@@ -45,5 +44,24 @@ const InputPassword: React.FC<InputProps> = ({ title, value, onChange }) => {
         </div>
     );
 }
+const InputWithTitle: React.FC<InputProps> = ({ title, value, onChange }) => {
+    const [isShow, setIsShow] = useState(false);
+    const handlerPassword = () => setIsShow(!isShow);
 
-export { Input, InputPassword };
+    return (
+        <div>
+            <label className=''>{title}</label>
+            <div className='containerTeste'>
+                <input 
+                    type={"text"} 
+                    className='' value={value} 
+                    onChange={onChange} placeholder={`digite + ${title}`}
+                />
+                <button onClick={handlerPassword} type='button' style={{border: "none"}}></button>
+
+            </div>
+        </div>
+    );
+}
+
+export { Input, InputPassword, InputWithTitle };

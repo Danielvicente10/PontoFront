@@ -19,6 +19,8 @@ const NavBarVertical: React.FC = () => {
             handleModal();
         } else if (route === 'scorePoint') {
             navigate('/scorePoint');
+        } else if (route === 'registerCompany') {
+            navigate('/registerCompany');
         }
     };
 
@@ -33,6 +35,7 @@ const NavBarVertical: React.FC = () => {
                     <li onClick={handleClick('home')}>Home</li>
                     <li onClick={handleClick('register')}>Cadastro</li>
                     <li onClick={handleClick('scorePoint')}>Registro de ponto</li>
+                    <li onClick={handleClick('registerCompany')}>Cadastro de empresa</li>
                 </ul>
             </nav>
         </div>
