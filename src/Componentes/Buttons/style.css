@@ -31,13 +31,9 @@
 
 /* Botão de marca ponto */
 .container-buttom{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
-    top: 50%;
-
+    top: 47%;
+    left: 26%;
 }
 
 .buttom-ponto{
@@ -58,4 +54,21 @@
 .buttom-ponto:hover{
     cursor: pointer;
     background-color:  #dbdf90;;
+}
+
+.buttom-cadastro {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #428f18;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Roboto;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.buttom-cadastro:hover {
+    background-color: #428f1855;
 }

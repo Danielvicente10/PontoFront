@@ -20,26 +20,26 @@ const MarkPointer: React.FC = () => {
             second: '2-digit'
         });
 
-        if (entrada == ""){
+        if (entrada === ""){
             return setEntrada(formattedDate);
         }
 
-        if (intervalo == ""){
+        if (intervalo === ""){
             return setIntervalo(formattedDate);
         }
 
-        if (fimIntervalo == ""){
+        if (fimIntervalo === ""){
             return setFimIntervalo(formattedDate);
         }
 
-        if (fimExpediente == ""){
+        if (fimExpediente === ""){
             return setFimExpediente(formattedDate);
         }
     };
 
 
     return (
-        <div style={{width: "30%"}}>
+        <div style={{width: "30%", height: "60%"}}>
             <div className='container-mark'>
                 <div>
                     <p>Entrada</p>

@@ -37,7 +37,22 @@
     font-weight: 500;
 }
 
-.containerTeste{
-    background-color: #000;;
-    border: 1px solide red;
+.valueInput  {
+    width: 100%;
+    border-radius: 20px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border: 1px solid #0f165f;
+}
+
+.titleInput{
+    font-family: Quicksand;
+    font-weight: 700;
+    letter-spacing: 1px;
 }

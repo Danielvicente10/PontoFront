@@ -28,4 +28,15 @@ const ButtonMarcarPonto: React.FC<ButtonMarcarPontoProps> = ({ onClick }) => {
     );
 }
 
-export { ButtonEnviar, ButtonMarcarPonto };
+
+const ButtonCadastro: React.FC<ButtonMarcarPontoProps> = ({ onClick }) => {
+    return(
+        <div className='container-buttom'>
+            <button className='buttom-cadastro' onClick={onClick}>Click Aqui!</button>
+        </div>
+    );
+}
+
+
+export { ButtonEnviar, ButtonMarcarPonto, ButtonCadastro };
+

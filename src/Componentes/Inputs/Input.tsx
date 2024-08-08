@@ -49,17 +49,16 @@ const InputWithTitle: React.FC<InputProps> = ({ title, value, onChange }) => {
     const handlerPassword = () => setIsShow(!isShow);
 
     return (
-        <div>
-            <label className=''>{title}</label>
-            <div className='containerTeste'>
+        <div style={{width: '15%'}}>
+            <label className='titleInput'>{title}</label>
+            
                 <input 
                     type={"text"} 
-                    className='' value={value} 
-                    onChange={onChange} placeholder={`digite + ${title}`}
+                    value={value} 
+                    onChange={onChange} placeholder={`Digite ${title}`}
+                    className='valueInput'
                 />
-                <button onClick={handlerPassword} type='button' style={{border: "none"}}></button>
-
-            </div>
+                <button onClick={handlerPassword} type='button' style={{border: "none"}}></button>            
         </div>
     );
 }
