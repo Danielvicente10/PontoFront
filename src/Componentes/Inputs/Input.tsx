@@ -3,10 +3,13 @@ import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUnlock, faLock } from '@fortawesome/free-solid-svg-icons';
 
+
+
 interface InputProps {
     title: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    type?: string; 
 }
 
 const Input: React.FC<InputProps> = ({ title, value, onChange }) => {
@@ -44,23 +47,20 @@ const InputPassword: React.FC<InputProps> = ({ title, value, onChange }) => {
         </div>
     );
 }
-const InputWithTitle: React.FC<InputProps> = ({ title, value, onChange }) => {
-    const [isShow, setIsShow] = useState(false);
-    const handlerPassword = () => setIsShow(!isShow);
-
+const InputWithTitle: React.FC<InputProps> = ({ title, value, onChange, type = "text" }) => {
     return (
-        <div style={{width: '15%'}}>
+        <div style={{ width: '15%' }}>
             <label className='titleInput'>{title}</label>
-            
-                <input 
-                    type={"text"} 
-                    value={value} 
-                    onChange={onChange} placeholder={`Digite ${title}`}
-                    className='valueInput'
-                />
-                <button onClick={handlerPassword} type='button' style={{border: "none"}}></button>            
+            <input 
+                type={type} 
+                value={value} 
+                onChange={onChange} 
+                className='valueInput'
+            />
         </div>
     );
 }
+
+export default InputWithTitle;
 
 export { Input, InputPassword, InputWithTitle };

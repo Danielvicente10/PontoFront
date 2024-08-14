@@ -31,7 +31,7 @@ const ButtonMarcarPonto: React.FC<ButtonMarcarPontoProps> = ({ onClick }) => {
 
 const ButtonCadastro: React.FC<ButtonMarcarPontoProps> = ({ onClick }) => {
     return(
-        <div className='container-buttom'>
+        <div>
             <button className='buttom-cadastro' onClick={onClick}>Click Aqui!</button>
         </div>
     );
