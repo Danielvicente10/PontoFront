@@ -1,58 +1,59 @@
 .containerIndex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9;
-    border: none;
-    border-radius: 14px;
-    padding: 6px;
-    text-align: start;
-    font-size: 16px;
-    padding-left: 12px;
-    margin-top: 4px;
-    height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: none;
+  border-radius: 14px;
+  padding: 6px;
+  text-align: start;
+  font-size: 16px;
+  padding-left: 12px;
+  margin-top: 4px;
+  height: 20px;
 }
 
 .input-wrapper {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
-.password-icon{
-    position: absolute;
-    left: 90%;
-    top: 33%;
-}
- 
-.password-container{
-    display: flex;
-    position: relative;
+.password-icon {
+  position: absolute;
+  top: 54%;
+  right: 12px;
+  transform: translateY(-50%);
 }
 
-.password-icon:hover{
-    cursor:pointer;
-    color: red;
+.password-container {
+  display: flex;
+  position: relative;
 }
 
-.input-title{
-    font-weight: 500;
+.password-icon:hover {
+  cursor: pointer;
+  color: red;
 }
 
-.valueInput  {
-    width: 100%;
-    border-radius: 20px;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: start;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border: 1px solid #0f165f;
+.input-title {
+  font-weight: 500;
 }
 
-.titleInput{
-    font-family: Quicksand;
-    font-weight: 700;
-    letter-spacing: 1px;
+.valueInput {
+  width: 100%;
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border: 1px solid #0f165f;
+}
+
+.titleInput {
+  font-family: Quicksand;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
