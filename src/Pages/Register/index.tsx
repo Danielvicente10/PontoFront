@@ -50,30 +50,7 @@ const Register: React.FC = () => {
     };
 
     return (
-        <div className='login-container'>
-            <div className='input-container'>
-                {showIcon ? (
-                    <FontAwesomeIcon icon={faUserCheck} className='user-check'/>
-                ) : (
-                    <>
-                        <span className='back' onClick={handleClick}>
-                            <FontAwesomeIcon icon={faArrowLeft} className='arrow-left' />voltar
-                        </span>
-                        <h1>Cadastro</h1>
-                        <Input title="Nome" value={name} onChange={(e) => setName(e.target.value)} />
-                        <Input title="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <InputPassword title="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
-                        <InputPassword title="Confirme a senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-                        <ButtonEnviar
-                            className={`button ${isButtonEnabled ? 'enabled' : 'disabled'}`}
-                            disabled={!isButtonEnabled}
-                            onClick={handleLogin}
-                            title='Cadastrar'
-                        />
-                    </>
-                )}
-            </div>
-        </div>
+        <div className='login-container'></div>
     );
 };
 

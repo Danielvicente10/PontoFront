@@ -1,5 +1,5 @@
 .login-container {
-    background-image: url('./Images/lampada.jpg');
+    background-image: url('./Images/salao.jpg');
     width: 100vw;
     height: 100vh;
     background-position: center;
@@ -19,13 +19,14 @@
     width: 500px;
     height: 500px;
     position: absolute;
-    background: #FFF7;
+    background: #777575f7;
     border-radius: 30px;
     gap: 20px;
 }
 
 .register{
-    color: #004cff;
+    color: #063a9d;
+    font-weight: 700;
 }
 
 .register:hover{
@@ -44,7 +45,7 @@
         position: absolute;
         top: 0;
         left: 0%;
-        background: #FFF7;
+        background: #777575e6;
         gap: 20px;
         border-radius: 0;
     }
