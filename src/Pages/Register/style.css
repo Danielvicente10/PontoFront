@@ -1,25 +1,41 @@
-.back{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    align-items: center;
-    display: flex;
-    width: 0;
-    height: 5%;
+.back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  align-items: center;
+  display: flex;
+  width: 0;
+  height: 5%;
 }
 
-.back:hover{
-    cursor: pointer;
-    color:red;
+.back:hover {
+  cursor: pointer;
+  color: red;
 }
 
-.arrow-left{
-    margin-right: 7px;
+.arrow-left {
+  margin-right: 7px;
 }
 
-.user-check{
-    font-size: 100px;
-    color: #277927;
-    background-color: black;
-    border-radius: 7px;
+.user-check {
+  font-size: 100px;
+  color: #277927;
+  background-color: black;
+  border-radius: 7px;
+}
+.group-inputs-register {
+  width: calc(100% - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.group-inputs-register > div {
+  width: 100%;
+}
+
+.group-inputs-register > div > input {
+  width: 100%;
 }

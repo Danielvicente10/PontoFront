@@ -4,7 +4,7 @@
   align-items: center;
   background-color: #f9f9f9;
   border: none;
-  border-radius: 14px;
+  border-radius: 8px;
   padding: 6px;
   text-align: start;
   font-size: 16px;
@@ -20,7 +20,7 @@
 .password-icon {
   position: absolute;
   top: 54%;
-  right: 12px;
+  right: 0px;
   transform: translateY(-50%);
 }
 
@@ -29,13 +29,14 @@
   position: relative;
 }
 
+.password-container input {
+  width: 100%;
+  margin-right: -16px;
+}
+
 .password-icon:hover {
   cursor: pointer;
   color: red;
-}
-
-.input-title {
-  font-weight: 500;
 }
 
 .valueInput {

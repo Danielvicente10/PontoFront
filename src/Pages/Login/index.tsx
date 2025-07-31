@@ -53,16 +53,36 @@ const Login: React.FC = () => {
     <div className="login-container">
       <div className="input-container">
         <h1>Login</h1>
-        <Input
-          title="E-mail"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <InputPassword
-          title="Senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            alignItems: "center",
+            gap: "20px",
+          }}
+        >
+          <Input
+            title="E-mail"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "calc(100% - 120px)",
+            }}
+          />
+          <InputPassword
+            title="Senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "calc(100% - 120px)",
+            }}
+          />
+        </div>
         <div style={{ marginTop: "-20px" }}>
           <span style={{ fontSize: "12px" }}>
             Não tem uma conta{" "}
