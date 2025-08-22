@@ -1,9 +1,10 @@
-import { faArrowLeftLong, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeftLong, faBars, faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MarkPointer from "../MarkPointer";
 import "./style.css";
+
 
 const NavBarVertical: React.FC = () => {
   const [isShow, setIsShow] = useState(true);
@@ -36,7 +37,7 @@ const NavBarVertical: React.FC = () => {
                 <FontAwesomeIcon icon={faBars} />
               )}
             </li>
-            <li onClick={handleClick("home")}>Home</li>
+            <li onClick={handleClick("home")}><FontAwesomeIcon icon={faHouse} />Home</li>
             <li onClick={handleClick("register")}>Cadastro</li>
             <li onClick={handleClick("scorePoint")}>Registro de ponto</li>
             <li onClick={handleClick("registerCompany")}>

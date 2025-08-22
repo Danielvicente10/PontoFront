@@ -5,6 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { ButtonEnviar } from "../../Componentes/Buttons/buttons";
 import { Input, InputPassword } from "../../Componentes/Inputs/Input";
 import "./style.css";
+import { users } from "../../data/users";
+
+export interface User {
+  id: string;
+  name: string;
+  password: string;
+  email: string;
+}
 
 const Register: React.FC = () => {
   const [name, setName] = useState("");
@@ -24,25 +32,22 @@ const Register: React.FC = () => {
   }, [name, password, confirmPassword, email]);
 
   const handleLogin = async () => {
-    const requestBody = { name, email, password };
+    const user: User = {
+      id: crypto.randomUUID(),
+      name,
+      email,
+      password,
+    };
 
     try {
-      const response = await fetch("http://localhost:3030/user/insertUsers", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestBody),
-      });
+      const storedUsers = JSON.parse(localStorage.getItem("users") || "[]");
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-
+      storedUsers.push(user);
+      localStorage.setItem("users", JSON.stringify(storedUsers));
       setShowIcon(true);
+
       setTimeout(() => {
-        navigate("/Home", { state: { userData: data[0] } });
+        navigate("/Home", { state: { userData: user } });
       }, 2000);
     } catch (error) {
       console.error("An error occurred:", error);

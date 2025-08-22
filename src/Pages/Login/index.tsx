@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ButtonEnviar } from "../../Componentes/Buttons/buttons";
 import { Input, InputPassword } from "../../Componentes/Inputs/Input";
+import { User,} from "../../data/users";
 import "./style.css";
+
+
 
 const Login: React.FC = () => {
   const [name, setName] = useState("");
@@ -14,32 +17,23 @@ const Login: React.FC = () => {
   }, [name, password]);
   const navigates = useNavigate();
   const handleLogin = async () => {
-    const requestBody = { name, password };
-
     try {
-      const response = await fetch("http://localhost:3030/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestBody),
-      });
 
-      const contentType = response.headers.get("Content-Type");
+      const storedUsers: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
-      let data;
-      if (contentType && contentType.includes("application/json")) {
-        data = await response.json();
-      } else {
-        data = await response.text();
+      console.log("Usuarios cadastrados:", storedUsers);
+    
+      const user = storedUsers.find(
+        (u) => u.email === name && u.password === password
+      );
+    
+      if (!user) {
+        console.log("Email ou senha inválida");
+        return;
       }
 
-      if (response.ok) {
-        if (data == "Error") {
-          return console.log("Senha invalida");
-        }
         navigate("/Home");
-      }
+      
     } catch (error) {
       console.error("An error occurred:", error);
     }
