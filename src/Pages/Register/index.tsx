@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ButtonEnviar } from "../../Componentes/Buttons/buttons";
 import { Input, InputPassword } from "../../Componentes/Inputs/Input";
 import "./style.css";
-import { users } from "../../data/users";
+import api from "../../services/app";
 
 export interface User {
   id: string;
@@ -32,25 +32,22 @@ const Register: React.FC = () => {
   }, [name, password, confirmPassword, email]);
 
   const handleLogin = async () => {
-    const user: User = {
-      id: crypto.randomUUID(),
-      name,
-      email,
-      password,
-    };
-
     try {
-      const storedUsers = JSON.parse(localStorage.getItem("users") || "[]");
+      const response = await api.post("/user", {
+        name,
+        email,
+        password,
+      });
 
-      storedUsers.push(user);
-      localStorage.setItem("users", JSON.stringify(storedUsers));
+      console.log("Usuário criado:", response.data);
+
       setShowIcon(true);
 
       setTimeout(() => {
-        navigate("/Home", { state: { userData: user } });
+        navigate("/Home", { state: { userData: response.data } });
       }, 2000);
-    } catch (error) {
-      console.error("An error occurred:", error);
+    } catch (error: any) {
+      console.error("Erro ao cadastrar:", error.response?.data || error.message);
     }
   };
 

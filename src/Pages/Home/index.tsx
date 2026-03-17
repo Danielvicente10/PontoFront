@@ -1,40 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavBarVertical } from "../../Componentes/NavBar/Input";
 import "./style.css";
-var totalDias = [];
-const marcarPonto = () => {
-  var hora = new Date();
-  if (totalDias.length < 1) {
-    totalDias.push(hora);
-    alert("Ponto marcado com sucesso!" + hora.toLocaleTimeString());
-  }
-};
+import api from "../../services/app";
 
 const Home: React.FC = () => {
+  const [hora, setHora] = useState("");
+  const [pontos, setPontos] = useState<Date[]>([]);
+
+  const getHoraAtual = () => {
+    return new Date().toLocaleTimeString("pt-BR");
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHora(getHoraAtual());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const marcarPonto = async () => {
+    const time = new Date();
+
+    try {
+      const response = await api.post("/ponto", {
+        time: time,
+      });
+
+      setPontos([...pontos, time]);
+    
+    }
+    catch (error) {
+      console.error("Erro ao marcar ponto:", error);
+    } 
+  };
+
   return (
     <div style={{ display: "flex", width: "100%" }}>
       <NavBarVertical />
 
-      <div className="home-container">
-        <div className="home-content">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              height: "100%",
-              alignItems: "center",
-            }}
-          >
-            <p id="subistiuir-conteudo">
-              Marque seu ponto de forma rápida e fácil!
-            </p>
-          </div>
-          <div style={{ marginBottom: "20px" }}>
-            <button className="btn-ponto" onClick={marcarPonto}>
-              Marcar ponto
-            </button>
-          </div>
-        </div>
+      <div style={{ margin: "20px" }}>
+        <h1>{hora}</h1>
+
+        <button className="btn-ponto" onClick={marcarPonto}>
+          Marcar ponto
+        </button>
       </div>
     </div>
   );
